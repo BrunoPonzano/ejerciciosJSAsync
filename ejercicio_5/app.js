@@ -1,11 +1,10 @@
-
 const obtenerPersonaFake = require("./library");
 
-// Codigo funcion callback
 
+function funcionCallback(persona){
+    console.log('nombre: ' + persona.results[0].name.title +'.' + persona.results[0].name.first + " "+persona.results[0].name.last);
+    console.log('localidad: ' + persona.results[0].location.street.number + " " +persona.results[0].location.street.name);
 
+}
 
-// Fin codigo
-
-// Usar la funcion obtenerPersonaFake(funcionCallback) en donde funcionCallback es una función que recibe el objeto persona extraido
-obtenerPersonaFake();
+obtenerPersonaFake(funcionCallback);
