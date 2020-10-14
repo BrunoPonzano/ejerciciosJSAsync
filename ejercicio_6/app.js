@@ -1,5 +1,12 @@
 
 const obtenerPersonaFake = require("./library");
 
-// Usar la funcion obtenerPersonaFake() la cual devuelve la promesa de traer el objeto persona extraido
-obtenerPersonaFake().then(x => console.log(x));
+
+obtenerPersonaFake('persona').then((persona)=>{
+console.log('Nombre: '+ persona.results[0].name.title + "."+ persona.results[0].name.first+" "+ persona.results[0].name.last);
+return persona;
+}).then(persona => {
+    console.log('Localidad: ' + persona.results[0].location.street.number + " " + persona.results[0].location.street.name);
+}).catch(err => {
+    console.log(err);
+});
