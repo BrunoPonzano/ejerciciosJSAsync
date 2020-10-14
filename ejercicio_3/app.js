@@ -1,14 +1,15 @@
 
 const obtenerPokemon = require("./library");
 
-// Codigo funcion callback
+
+
+function funcionCallback(pokemon){
+    console.log('Nombre: ' + pokemon.name);
+    console.log('Habilidad: '+pokemon.abilities[0].ability.name);
+    console.log('Altura: '+pokemon.height);
+    console.log()
+}
 
 
 
-// Fin codigo
-
-// Usar la funcion obtenerPokemon(pokemon,funcionCallback) en donde:
-// - nombrePokemon es un string con el nombre del pokemon
-// - funcionCallback es una función que recibe el objeto con los datos del pokemon extraido
-
-obtenerPokemon();
+obtenerPokemon('pidgeot', funcionCallback);
